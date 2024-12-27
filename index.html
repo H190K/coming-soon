@@ -112,18 +112,22 @@
         .language-selector {
             position: absolute;
             top: 20px;
-            right: 20px;  /* Changed to right */
+            right: 20px;  /* Right-aligned */
             font-size: 1rem;
             cursor: pointer;
             color: #d1d1d6;
-            padding: 10px 20px;
+            padding: 3px 10px;  /* Reduced padding */
             background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 8px;
+            border-radius: 50px;  /* Rounded button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .language-selector span {
-            margin-left: 10px;
+            margin: 0;
             font-weight: 500;
+            padding: 2px 4px;  /* Reduced padding around the text */
         }
 
         /* Arabic version styles */
