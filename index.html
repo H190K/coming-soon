@@ -15,12 +15,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         .container {
             text-align: center;
             padding: 20px;
             animation: fadeIn 2s;
+            max-width: 800px;
+            width: 100%;
         }
 
         h1 {
@@ -89,14 +92,104 @@
             font-size: 0.875rem;
             color: #8e8e93;
         }
+
+        .other-tools {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #d1d1d6;
+        }
+
+        .other-tools a {
+            color: #ff6347;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .other-tools a:hover {
+            text-decoration: underline;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #d1d1d6;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        .language-selector span {
+            margin-left: 10px;
+            font-weight: 500;
+        }
+
+        /* Arabic version styles */
+        .container.arabic {
+            direction: rtl;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container.arabic h1,
+        .container.arabic p,
+        .container.arabic .other-tools {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="language-selector" onclick="toggleLanguage()">
+        <span id="lang-toggle">AR|EN</span>
+    </div>
+
+    <div class="container" id="content">
         <h1>Something Amazing is Coming</h1>
         <p>We are crafting something extraordinary. Stay tuned.</p>
         <a href="mailto:info@h190k.com" class="btn">Learn More</a>
+        <div class="other-tools">
+            <p>Visit our other tool for now:</p>
+            <a href="http://qr.h190k.com" target="_blank">qr.h190k.com</a> | 
+            <a href="http://wa.h190k.com" target="_blank">wa.h190k.com</a>
+        </div>
     </div>
+
     <footer>&copy; 2024 H190K. All Rights Reserved.</footer>
+
+    <script>
+        let isArabic = false;
+
+        function toggleLanguage() {
+            const container = document.querySelector('.container');
+            const langToggle = document.getElementById('lang-toggle');
+            
+            isArabic = !isArabic;
+
+            if (isArabic) {
+                container.classList.add('arabic');
+                langToggle.textContent = 'EN|AR';
+                document.querySelector('h1').textContent = 'خلوكم منتظرين قريباً جداً';
+                document.querySelector('p').textContent = 'جاي نسوي شي رهيب. خليكم ويانا.';
+                document.querySelector('.btn').textContent = 'تعرف على المزيد';
+                document.querySelector('.other-tools p').textContent = 'زوروا أدواتنا الثانية حالياً.';
+                document.querySelector('.other-tools a:nth-child(1)').textContent = 'qr.h190k.com';
+                document.querySelector('.other-tools a:nth-child(2)').textContent = 'wa.h190k.com';
+            } else {
+                container.classList.remove('arabic');
+                langToggle.textContent = 'AR|EN';
+                document.querySelector('h1').textContent = 'Something Amazing is Coming';
+                document.querySelector('p').textContent = 'We are crafting something extraordinary. Stay tuned.';
+                document.querySelector('.btn').textContent = 'Learn More';
+                document.querySelector('.other-tools p').textContent = 'Visit our other tool for now:';
+                document.querySelector('.other-tools a:nth-child(1)').textContent = 'qr.h190k.com';
+                document.querySelector('.other-tools a:nth-child(2)').textContent = 'wa.h190k.com';
+            }
+        }
+    </script>
 </body>
 </html>
