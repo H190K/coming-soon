@@ -112,13 +112,13 @@
         .language-selector {
             position: absolute;
             top: 20px;
-            right: 20px;  /* Right-aligned */
+            right: 20px;
             font-size: 1rem;
             cursor: pointer;
             color: #d1d1d6;
-            padding: 3px 10px;  /* Reduced padding */
+            padding: 3px 10px;
             background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 50px;  /* Rounded button */
+            border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -127,10 +127,9 @@
         .language-selector span {
             margin: 0;
             font-weight: 500;
-            padding: 2px 4px;  /* Reduced padding around the text */
+            padding: 2px 4px;
         }
 
-        /* Arabic version styles */
         .container.arabic {
             direction: rtl;
             text-align: center;
@@ -153,13 +152,12 @@
     </div>
 
     <div class="container" id="content">
-        <h1>Something Amazing is Coming</h1>
-        <p>We are crafting something extraordinary. Stay tuned.</p>
-        <a href="mailto:info@h190k.com" class="btn">Learn More</a>
+        <h1>The store page under development</h1>
+        <p>We are sorry we can't help you now</p>
         <div class="other-tools">
-            <p>Visit our other tool for now:</p>
-            <a href="http://qr.h190k.com" target="_blank">qr.h190k.com</a> | 
-            <a href="http://wa.h190k.com" target="_blank">wa.h190k.com</a>
+            <p>Visit us at:</p>
+            <a href="http://h190k.com" target="_blank">h190k.com</a> | 
+            <a href="mailto:info@h190k.com">info@h190k.com</a>
         </div>
     </div>
 
@@ -177,21 +175,19 @@
             if (isArabic) {
                 container.classList.add('arabic');
                 langToggle.textContent = 'EN|AR';
-                document.querySelector('h1').textContent = 'خلوكم منتظرين قريباً جداً';
-                document.querySelector('p').textContent = 'جاي نسوي شي رهيب. خليكم ويانا.';
-                document.querySelector('.btn').textContent = 'تعرف على المزيد';
-                document.querySelector('.other-tools p').textContent = 'زوروا أدواتنا الثانية حالياً.';
-                document.querySelector('.other-tools a:nth-child(1)').textContent = 'qr.h190k.com';
-                document.querySelector('.other-tools a:nth-child(2)').textContent = 'wa.h190k.com';
+                document.querySelector('h1').textContent = 'صفحة المتجر قيد التطوير';
+                document.querySelector('p').textContent = 'نعتذر عن عدم تمكننا من مساعدتك الآن';
+                document.querySelector('.other-tools p').textContent = 'تواصل معنا عبر:';
+                document.querySelector('.other-tools a:nth-child(1)').textContent = 'h190k.com';
+                document.querySelector('.other-tools a:nth-child(2)').textContent = 'info@h190k.com';
             } else {
                 container.classList.remove('arabic');
                 langToggle.textContent = 'AR|EN';
-                document.querySelector('h1').textContent = 'Something Amazing is Coming';
-                document.querySelector('p').textContent = 'We are crafting something extraordinary. Stay tuned.';
-                document.querySelector('.btn').textContent = 'Learn More';
-                document.querySelector('.other-tools p').textContent = 'Visit our other tool for now:';
-                document.querySelector('.other-tools a:nth-child(1)').textContent = 'qr.h190k.com';
-                document.querySelector('.other-tools a:nth-child(2)').textContent = 'wa.h190k.com';
+                document.querySelector('h1').textContent = 'The store page under development';
+                document.querySelector('p').textContent = 'We are sorry we can\'t help you now';
+                document.querySelector('.other-tools p').textContent = 'Visit us at:';
+                document.querySelector('.other-tools a:nth-child(1)').textContent = 'h190k.com';
+                document.querySelector('.other-tools a:nth-child(2)').textContent = 'info@h190k.com';
             }
         }
     </script>
